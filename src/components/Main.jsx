@@ -31,6 +31,7 @@ useEffect(() => {
       break;
 
     default:
+      setCoponentToShow(<BuyFonts/>)
       break;
   }
 
@@ -50,9 +51,7 @@ useEffect(() => {
         </div>
         </div>
         <div className='main__body'>
-        {/* { tagToShow === stringMyFonts ? <MyFonts />: undefined } */}
-        {/* { tagToShow === stringBuyFonts ? <BuyFonts /> : <MyFonts /> } */}
-        {componentToShow}
+          {componentToShow}
         </div>
       </div>
     </>

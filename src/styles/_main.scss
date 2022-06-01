@@ -6,7 +6,7 @@
     align-items: baseline;
     display: flex;
     justify-content: space-between;
-    margin: 1rem;
+    padding: 1rem;
     &__sentence-title {
       font-size: 3rem;
       font-weight: 900;
@@ -16,10 +16,14 @@
       justify-content: space-between;
       width: 12rem;
       p {
-        color: blue;
         font-weight: 900;
         cursor: pointer;
       }
     }
+  }
+  &__body {
+    border: 3px solid rgb(167, 203, 226);
+    border-radius: 1rem;
+    padding:1rem;
   }
 }

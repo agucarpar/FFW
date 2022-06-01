@@ -1,3 +1,13 @@
 .navbar {
-  color: red;
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  &__sentence-title {
+    font-size: 4rem;
+    font-weight: 900;
+  }
+  &__tags-container {
+    display: flex;
+    justify-content: space-between;
+  }
 }

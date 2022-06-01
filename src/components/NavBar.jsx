@@ -1,12 +1,14 @@
 import React from 'react'
-import BuyFonts from './BuyFonts'
-import MyFonts from './MyFonts'
+
 
 function NavBar() {
   return (
     <div className='navbar'>
-      <BuyFonts />
-      <MyFonts />
+      <p className='navbar__sentence-title'>Please, select one font</p>
+      <div className='navbar__tags-container'>
+        <p>MY FONTS</p>
+        <p>BUY FONTS</p>
+      </div>
     </div>
   )
 }

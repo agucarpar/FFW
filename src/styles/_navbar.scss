@@ -1,13 +1,20 @@
 .navbar {
-  align-items: center;
+  align-items: baseline;
   display: flex;
   justify-content: space-between;
+  margin: 1rem;
   &__sentence-title {
-    font-size: 4rem;
+    font-size: 3rem;
     font-weight: 900;
   }
   &__tags-container {
     display: flex;
     justify-content: space-between;
+    width: 12rem;
+    p {
+      color: blue;
+      font-weight: 900;
+      cursor: pointer;
+    }
   }
 }

@@ -8,30 +8,33 @@ function Main() {
 const stringMyFonts = 'my fonts'
 const stringBuyFonts = 'buy fonts'
 
-const [tagToShow, setTagToShow] = useState(stringMyFonts)
+const [tagToShow, setTagToShow] = useState(stringBuyFonts)
+const [componentToShow, setCoponentToShow] = useState(<BuyFonts/>)
 
-let componentToShow =  <BuyFonts/>
 
 function handlerTags(tagsName) {
+
   setTagToShow(tagsName)
+
 }
 
 
-useEffect( ()=> {
+useEffect(() => {
+
   switch (tagToShow) {
     case stringMyFonts:
-      componentToShow = <MyFonts/>
+      setCoponentToShow(<MyFonts/>)
       break;
 
     case stringBuyFonts:
-      componentToShow = <BuyFonts/>
+      setCoponentToShow(<BuyFonts/>)
       break;
-  
+
     default:
       break;
   }
-}, [tagToShow] )
 
+}, [tagToShow])
 
 
 
@@ -48,7 +51,8 @@ useEffect( ()=> {
         </div>
         <div className='main__body'>
         {/* { tagToShow === stringMyFonts ? <MyFonts />: undefined } */}
-        { tagToShow === stringBuyFonts ? <BuyFonts /> : <MyFonts /> }
+        {/* { tagToShow === stringBuyFonts ? <BuyFonts /> : <MyFonts /> } */}
+        {componentToShow}
         </div>
       </div>
     </>

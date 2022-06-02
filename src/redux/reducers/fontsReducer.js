@@ -1,7 +1,8 @@
 import { createReducer } from '@reduxjs/toolkit'
 
 import {
-  setMyFonts
+  setMyFonts,
+  selectedFont
 } from '../actions/actions.js'
 
 const initialState = {
@@ -13,10 +14,11 @@ const initialState = {
 const fontsReducer = createReducer( {...initialState}, (builder)=> {
   builder
     .addCase(setMyFonts, (state, action)=> {
-      console.log('STate',state)
-      console.log('actions', action)
-    state.myfonts = action.payload
-  })
+      state.myfonts = action.payload
+    })
+    .addCase(selectedFont, (state, action) => {
+      state.buyFonts = action.payload
+    })
 } )
 
 export default fontsReducer

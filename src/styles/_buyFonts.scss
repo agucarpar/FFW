@@ -1,0 +1,73 @@
+.container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 0px 0px;
+  grid-auto-flow: row;
+  grid-template-areas:
+    "DIV-1 DIV-2 ."
+    "DIV-1 DIV-3 ."
+    ". . .";
+
+  height: 50rem;
+  width: 100%;
+
+  > :nth-child(1) {
+    grid-area: DIV-1;
+
+    .font-wrapper {
+      &__font-section {
+        &__input-wrapper {
+          &__square {
+            width: 5rem;
+            height: 5rem;
+            &__color {
+              width: 100%;
+              height: 100%;
+              background-color: forestgreen;
+            }
+          }
+        }
+      }
+    }
+  };
+
+  > :nth-child(2) {
+    grid-area: DIV-2;
+  };
+
+  > :nth-child(3) {
+    grid-area: DIV-3;
+  };
+
+  .font-wrapper {
+    &__font-section {
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      &__input-wrapper {
+        &__square {
+          padding: 1rem;
+          border: 1px solid black;
+          border-radius: 5%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          &__color {
+            width: 100%;
+            height: 100%;
+            background-color: forestgreen;
+            display: flex;
+            align-items: flex-end;
+            padding: 0.5rem;
+            box-sizing: border-box;
+          }
+        }
+      }
+    }
+  }
+}
+
+
+

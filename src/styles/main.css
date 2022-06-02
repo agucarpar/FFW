@@ -1,0 +1,59 @@
+.App {
+  height: 100vh;
+  background-color: red;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.main {
+  width: 60rem;
+  border: 5px solid black;
+  background-color: wheat;
+}
+
+.main__navbar {
+  -webkit-box-align: baseline;
+      -ms-flex-align: baseline;
+          align-items: baseline;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 1rem;
+}
+
+.main__navbar__sentence-title {
+  font-size: 3rem;
+  font-weight: 900;
+}
+
+.main__navbar__tags-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 12rem;
+}
+
+.main__navbar__tags-container p {
+  font-weight: 900;
+  cursor: pointer;
+}
+
+.main__body {
+  border: 3px solid #a7cbe2;
+  border-radius: 1rem;
+  padding: 1rem;
+}
+/*# sourceMappingURL=main.css.map */

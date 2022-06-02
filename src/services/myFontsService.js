@@ -7,7 +7,6 @@ export async function getMyFonts() {
       response.status &&
       response.status === 200
       ) {
-        console.log('MANOLO')
         return response
       }
   else return []

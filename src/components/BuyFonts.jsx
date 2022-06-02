@@ -1,8 +1,19 @@
-import React from 'react'
+import React, { useEffect } from 'react'
+import { getMyFonts } from '../services/myFontsService'
+
 
 function BuyFonts() {
+
+useEffect(() => {
+  getMyFonts()
+}, [])
+
+
   return (
-    <div>BuyFonts</div>
+    <div>BuyFonts
+      <p>
+      </p>
+    </div>
   )
 }
 

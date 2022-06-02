@@ -4,8 +4,21 @@ import { getMyFonts } from '../services/myFontsService'
 
 function BuyFonts() {
 
-useEffect(() => {
-  getMyFonts()
+  function settingMyFontsData(response) {
+    if(response.length >= 1) {
+
+    } else {
+      
+    }
+  }
+
+
+  useEffect(() => {
+  getMyFonts().then(response =>{
+
+    settingMyFontsData(response)
+
+  })
 }, [])
 
 

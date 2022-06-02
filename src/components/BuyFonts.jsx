@@ -1,25 +1,37 @@
 import React, { useEffect } from 'react'
 import { getMyFonts } from '../services/myFontsService'
+import {
+  setMyFonts
+} from '../redux/actions/actions'
+
+import { useDispatch } from 'react-redux'
 
 
 function BuyFonts() {
 
-  function settingMyFontsData(response) {
-    if(response.length >= 1) {
-
-    } else {
-      
-    }
-  }
+  const dispatch = useDispatch()
 
 
   useEffect(() => {
-  getMyFonts().then(response =>{
 
-    settingMyFontsData(response)
+    getMyFonts().then(response =>{
 
-  })
-}, [])
+      const data = response.data.content
+      console.log('RESPONSE', data)
+
+      if(data.length >= 1) {
+        dispatch(
+          setMyFonts(data)
+        )
+      } else {
+        dispatch(
+          setMyFonts([])
+        )
+      }
+
+    })
+
+  }, [dispatch])
 
 
   return (

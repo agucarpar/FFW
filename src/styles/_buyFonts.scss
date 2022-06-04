@@ -1,4 +1,7 @@
-.container {
+@import './variables';
+@import './mixins';
+
+.buy-font-container {
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr 1fr;
@@ -9,27 +12,47 @@
     "DIV-1 DIV-3 ."
     ". . .";
 
-  height: 50rem;
-  width: 100%;
+  @include tag-container-size;
+
+  // height: 25rem;
+  // width: 50rem;
+
+
+  // styles for just first/big section
 
   > :nth-child(1) {
     grid-area: DIV-1;
 
     .font-wrapper {
       &__font-section {
+
+        justify-content: center;
+
         &__input-wrapper {
           &__square {
-            width: 5rem;
-            height: 5rem;
+            width: calc($square-size-smalls-sections + 3rem);
+            height: calc($square-size-smalls-sections + 3rem);
             &__color {
-              width: 100%;
-              height: 100%;
-              background-color: forestgreen;
+              p {
+
+                @include inner-abbr-size;
+
+              }
+            }
+          }
+          &__input {
+            padding-top: 1.2rem;
+            width: 23rem;
+            display: flex;
+            label {
+              padding-left: 0.5rem;
+              font-size: 2rem;
             }
           }
         }
       }
     }
+
   };
 
   > :nth-child(2) {
@@ -40,33 +63,72 @@
     grid-area: DIV-3;
   };
 
-  .font-wrapper {
-    &__font-section {
-      height: 100%;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      &__input-wrapper {
-        &__square {
-          padding: 1rem;
-          border: 1px solid black;
-          border-radius: 5%;
+  > :nth-child(2), :nth-child(3) {
+    .font-wrapper {
+      &__font-section {
+        &__input-wrapper {
           display: flex;
-          justify-content: center;
-          align-items: center;
-          &__color {
-            width: 100%;
-            height: 100%;
-            background-color: forestgreen;
+          align-items: flex-start;
+          &__square {
+            width: $square-size-smalls-sections;
+            height: $square-size-smalls-sections;
+            &__color {
+              p {
+                @include inner-abbr-size;
+              }
+            }
+          }
+          &__input {
+            width: calc(100% - 8rem);
+            padding:1.2rem 0 0 2rem;
             display: flex;
-            align-items: flex-end;
-            padding: 0.5rem;
-            box-sizing: border-box;
+            label {
+              padding-left: 0.5rem;
+              font-size: 2rem;
+            }
           }
         }
       }
     }
   }
+
+  // Styles shared for squares
+
+  .font-wrapper {
+
+    &__font-section {
+      align-items: center;
+      display: flex;
+      height: 100%;
+      justify-content: flex-start;
+      &__input-wrapper {
+
+        &__square {
+          padding: 0.3rem;
+          border: 0.15rem solid black;
+          border-radius: $square-border-radius;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          &__color {
+            align-items: flex-end;
+            border-radius: $square-border-radius;
+            display: flex;
+            height: 100%;
+            padding: 0.7rem;
+            width: 100%;
+
+            p {
+              color: black;
+              opacity: 45%;
+            }
+
+          }
+        }
+      }
+    }
+  }
+
 }
 
 

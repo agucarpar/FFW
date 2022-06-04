@@ -1,32 +1,48 @@
 import React, { useEffect } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
+
+
+import { setMyFontText } from '../redux/actions/actions'
 // import { useSelector } from 'react-redux'
 import { getBuyFonts } from '../services/buyFontsService'
 
 
 function MyFonts() {
 
+  const dispatch = useDispatch()
+
+
   // Cogiendo el valor desde el state
-  // const myFonts = useSelector(state => state.fontsReducer.myfonts)
+  const textMyFont = useSelector(state => state.fontsReducer.textMyFont)
 
-
-  function settingBuyFontsData(response) {
-    if(response.length >= 1) {
-
-    } else {
-
-    }
-  }
 
   useEffect(() => {
     getBuyFonts().then(response =>{
 
-      settingBuyFontsData(response)
+      const data = response.data.content
+
+
+      setMyFontText (data)
+
+      if(data.length >= 1) {
+        dispatch(
+          setMyFontText(data)
+        )
+      } else {
+        dispatch(
+          setMyFontText('')
+        )
+      }
 
     })
-  }, [])
+  }, [dispatch, ])
 
   return (
-    <div>MyFonts</div>
+    <div className='my-fonts-container'>
+      <p className='my-fonts-container__text'>
+        {textMyFont}
+      </p>
+    </div>
   )
 }
 

@@ -1,0 +1,9 @@
+@mixin tag-container-size {
+  height: 25rem;
+  width: inherit;
+}
+
+@mixin inner-abbr-size {
+  font-size: 2rem;
+  font-weight: 700;
+}

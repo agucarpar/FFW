@@ -1,28 +1,25 @@
-import React, { useEffect, useRef } from 'react'
-import { getMyFonts } from '../services/myFontsService'
-import {
-  setMyFonts,
-  selectedFont
-} from '../redux/actions/actions'
+import React, { useEffect } from 'react'
 
 import { useDispatch, useSelector } from 'react-redux'
+
+import { getMyFonts } from '../services/myFontsService'
+
+import { setBuyFonts } from '../redux/actions/actions'
+
+
+import SquareContainer from './SquareContainer'
 
 
 function BuyFonts() {
 
   const dispatch = useDispatch()
-  const myFonts = useSelector(state => state.fontsReducer.myfonts)
+  const buyFonts = useSelector(state => state.fontsReducer.buyFonts)
 
-
-  function handlerInputSelection(id) {
-    console.log('id', id)
-    dispatch(selectedFont(id))
-  }
 
 
   useEffect(() => {
 
-    if(myFonts.length !== 0) return
+    if(buyFonts.length !== 0) return
 
     getMyFonts().then(response =>{
 
@@ -30,44 +27,40 @@ function BuyFonts() {
 
       if(data.length >= 1) {
         dispatch(
-          setMyFonts(data)
+          setBuyFonts(data)
         )
       } else {
         dispatch(
-          setMyFonts([])
+          setBuyFonts([])
         )
       }
 
     })
 
-  }, [dispatch, myFonts])
+  }, [dispatch, buyFonts])
 
-  if(myFonts.length >= 1) {
+  if(buyFonts.length >= 1) {
 
     return (
-      <div className="container">
+      <div className="buy-font-container">
         {
-          myFonts.map(font => {
+          buyFonts.map(font => {
             return (
               <div key={font.id} className="font-wrapper">
                 <div className="font-wrapper__font-section">
-                  <div className='font-wrapper__font-section__input-wrapper'>
-                    <div className='font-wrapper__font-section__input-wrapper__square'>
-                      <div className='font-wrapper__font-section__input-wrapper__square__color'>
-                        {font.abbr}
-                      </div>
-                    </div>
-                    <div className='font-wrapper__font-section__input-wrapper__input'>
-                      <input type="radio" name="font" id={font.id} onChange={()=>handlerInputSelection(font.id)}/>
-                      <label htmlFor={font.id}>{font.label}</label>
-                    </div>
-                  </div>
+                  <SquareContainer squareData={font}/>
                 </div>
               </div>
             )
           })
         }
       </div>
+    )
+  } else {
+    return (
+      <p>
+        Sorry, there are not fonts to show.
+      </p>
     )
   }
 

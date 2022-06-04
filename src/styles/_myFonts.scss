@@ -1,0 +1,12 @@
+@import './mixins';
+
+.my-fonts-container {
+  @include tag-container-size;
+
+  padding-top: 5rem;
+
+  &__text {
+    text-align: center;
+    line-height: 1.5;
+  }
+}

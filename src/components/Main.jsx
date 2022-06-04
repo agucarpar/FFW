@@ -46,8 +46,14 @@ useEffect(() => {
         <div className='main__navbar'>
           <p className='main__navbar__sentence-title'>Please, select one font</p>
           <div className='main__navbar__tags-container'>
-            <p onClick={()=>handlerTags(stringMyFonts)}>MY FONTS</p>
-            <p onClick={()=>handlerTags(stringBuyFonts)}>BUY FONTS</p>
+            <p
+              style={{color: tagToShow === stringMyFonts ? 'orange' : 'grey' } }
+              onClick={()=>handlerTags(stringMyFonts)}>MY FONTS
+            </p>
+            <p
+              style={{color: tagToShow === stringBuyFonts ? 'orange' : 'grey' } }
+              onClick={()=>handlerTags(stringBuyFonts)}>BUY FONTS
+            </p>
         </div>
         </div>
         <div className='main__body'>

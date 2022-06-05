@@ -13,7 +13,7 @@ const initialState = {
 }
 
 
-const fontsReducer = createReducer( {...initialState}, (builder)=> {
+const fontsReducer = createReducer( { ...initialState }, ( builder )=> {
   builder
     .addCase(setBuyFonts, (state, action)=> {
       state.buyFonts = action.payload

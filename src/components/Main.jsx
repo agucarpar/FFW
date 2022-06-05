@@ -50,16 +50,16 @@ function Main() {
           <p className='main__navbar__sentence-title'>Please, select one font</p>
           <div className='main__navbar__tags-container'>
             <button
-              style={{color: tagToShow === stringMyFonts ? 'orange' : 'grey' } }
-              onClick={()=>handlerTags(stringMyFonts)}
-              onFocus={()=>handlerOnFocus(stringMyFonts)}
+              style={{ color: tagToShow === stringMyFonts ? 'orange' : 'grey' } }
+              onClick={ ()=>handlerTags( stringMyFonts ) }
+              onFocus={ ()=>handlerOnFocus( stringMyFonts ) }
             >
               MY FONTS
             </button>
             <button
-              style={{color: tagToShow === stringBuyFonts ? 'orange' : 'grey' } }
-              onClick={()=>handlerTags(stringBuyFonts)}
-              onFocus={()=>handlerOnFocus(stringBuyFonts)}
+              style={{ color: tagToShow === stringBuyFonts ? 'orange' : 'grey' } }
+              onClick={ ()=>handlerTags( stringBuyFonts ) }
+              onFocus={ ()=>handlerOnFocus( stringBuyFonts ) }
             >
               BUY FONTS
             </button>

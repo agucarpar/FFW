@@ -70,7 +70,10 @@
     "extends": [
       "react-app",
       "react-app/jest"
-    ]
+    ],
+    "rules": {
+      "indent": ["error", 2]
+    }
   },
   "browserslist": {
     "production": [

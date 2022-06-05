@@ -5,27 +5,27 @@ import MyFonts from './MyFonts'
 
 function Main() {
 
-const stringMyFonts = 'my fonts'
-const stringBuyFonts = 'buy fonts'
+  const stringMyFonts = 'my fonts'
+  const stringBuyFonts = 'buy fonts'
 
-const [tagToShow, setTagToShow] = useState(stringBuyFonts)
-const [componentToShow, setCoponentToShow] = useState(<BuyFonts/>)
-
-
-function handlerTags(tagsName) {
-
-  setTagToShow(tagsName)
-
-}
-
-function handlerOnFocus(section) {
-  speechSynthesis.speak(new SpeechSynthesisUtterance(section))
-}
+  const [tagToShow, setTagToShow] = useState(stringBuyFonts)
+  const [componentToShow, setCoponentToShow] = useState(<BuyFonts/>)
 
 
-useEffect(() => {
+  function handlerTags(tagsName) {
 
-  switch (tagToShow) {
+    setTagToShow(tagsName)
+
+  }
+
+  function handlerOnFocus(section) {
+    speechSynthesis.speak(new SpeechSynthesisUtterance(section))
+  }
+
+
+  useEffect(() => {
+
+    switch (tagToShow) {
     case stringMyFonts:
       setCoponentToShow(<MyFonts/>)
       break;
@@ -37,9 +37,8 @@ useEffect(() => {
     default:
       setCoponentToShow(<BuyFonts/>)
       break;
-  }
-
-}, [tagToShow])
+    }
+  }, [tagToShow])
 
 
 
@@ -64,7 +63,7 @@ useEffect(() => {
             >
               BUY FONTS
             </button>
-        </div>
+          </div>
         </div>
         <div className='main__body'>
           {componentToShow}

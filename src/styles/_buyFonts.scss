@@ -28,27 +28,31 @@
 
         justify-content: center;
 
-        &__input-wrapper {
-          &__square {
-            width: calc($square-size-smalls-sections + 3rem);
-            height: calc($square-size-smalls-sections + 3rem);
-            &__color {
-              p {
+        &__wrapper{
 
-                @include inner-abbr-size;
+          &__card-wrapper {
+            &__square {
+              width: calc($square-size-smalls-sections + 3rem);
+              height: calc($square-size-smalls-sections + 3rem);
+              &__color {
+                p {
 
+                  @include inner-abbr-size;
+
+                }
               }
             }
-          }
-          &__input {
-            padding-top: 1.2rem;
-            width: 23rem;
-            display: flex;
-            label {
-              padding-left: 0.5rem;
-              font-size: 2rem;
+              &__input-wrapper {
+
+                padding-top: 1.2rem;
+                display: flex;
+                width: 23rem;
+                label {
+                  padding-left: 0.5rem;
+                  font-size: 2rem;
+                }
+              }
             }
-          }
         }
       }
     }
@@ -66,25 +70,30 @@
   > :nth-child(2), :nth-child(3) {
     .font-wrapper {
       &__font-section {
-        &__input-wrapper {
-          display: flex;
-          align-items: flex-start;
-          &__square {
-            width: $square-size-smalls-sections;
-            height: $square-size-smalls-sections;
-            &__color {
-              p {
-                @include inner-abbr-size;
+
+        &__wrapper {
+          &__card-wrapper {
+            display: flex;
+            align-items: flex-start;
+            &__square {
+              width: $square-size-smalls-sections;
+              height: $square-size-smalls-sections;
+              &__color {
+                p {
+                  @include inner-abbr-size;
+                }
               }
             }
-          }
-          &__input {
-            width: calc(100% - 8rem);
-            padding:1.2rem 0 0 2rem;
-            display: flex;
-            label {
-              padding-left: 0.5rem;
-              font-size: 2rem;
+            &__input-wrapper {
+              width: calc(100% - 8rem);
+              padding:1.2rem 0 0 2rem;
+
+
+                display: flex;
+                label {
+                  padding-left: 0.5rem;
+                  font-size: 2rem;
+                }
             }
           }
         }
@@ -97,33 +106,40 @@
   .font-wrapper {
 
     &__font-section {
-      align-items: center;
+      align-items: flex-start;
       display: flex;
       height: 100%;
       justify-content: flex-start;
-      &__input-wrapper {
+      &__wrapper {
+        &__card-wrapper {
 
-        &__square {
-          padding: 0.3rem;
-          border: 0.15rem solid black;
-          border-radius: $square-border-radius;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          &__color {
-            align-items: flex-end;
+          &__square {
+            padding: 0.3rem;
+            border: 0.15rem solid black;
             border-radius: $square-border-radius;
             display: flex;
-            height: 100%;
-            padding: 0.7rem;
-            width: 100%;
+            justify-content: center;
+            align-items: center;
+            &__color {
+              align-items: flex-end;
+              border-radius: $square-border-radius;
+              display: flex;
+              height: 100%;
+              padding: 0.7rem;
+              width: 100%;
 
-            p {
-              color: black;
-              opacity: 45%;
+              p {
+                color: black;
+                opacity: 45%;
+              }
+
             }
-
           }
+        }
+        &__color-reader {
+          text-align: center;
+
+          padding-top: 2rem;
         }
       }
     }

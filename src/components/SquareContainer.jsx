@@ -9,13 +9,15 @@ import {
 
 function SquareContainer(props) {
 
-   // Cogiendo el valor desde el state
-  const reduxSelectedFont = useSelector(state => state.fontsReducer.selectedFont ? state.fontsReducer.selectedFont : undefined)
-
 
   const dispatch = useDispatch()
 
+  // Cogiendo el valor desde el state
+  const reduxSelectedFont = useSelector(state => state.fontsReducer.selectedFont ? state.fontsReducer.selectedFont : undefined)
+
   const [isSelected, setIsSelected] = useState(false)
+
+  const colorBlindLabel = 'color-blind-label'
 
 
 
@@ -23,6 +25,10 @@ function SquareContainer(props) {
 
     dispatch (selectedFont(id))
 
+  }
+
+  function handlerOnFocus(color) {
+    speechSynthesis.speak(new SpeechSynthesisUtterance(color))
   }
 
   useEffect(() => {
@@ -40,24 +46,35 @@ function SquareContainer(props) {
 
 
   return (
-    <div className='font-wrapper__font-section__input-wrapper' style={{opacity: isSelected === true ? '50%' : '100%'}}>
-      <div className='font-wrapper__font-section__input-wrapper__square'>
-        <div className='font-wrapper__font-section__input-wrapper__square__color' style={{ backgroundColor: props.squareData.color }}>
-          <p>
-            {props.squareData.abbr}
-          </p>
+    <div className='font-wrapper__font-section__wrapper'>
+
+    
+      <div className='font-wrapper__font-section__wrapper__card-wrapper' style={{opacity: isSelected === true ? '50%' : '100%'}}>
+        <div className='font-wrapper__font-section__wrapper__card-wrapper__square'>
+          <div className='font-wrapper__font-section__wrapper__card-wrapper__square__color' style={{ backgroundColor: props.squareData.color }}>
+            <p>
+              {props.squareData.abbr}
+            </p>
+          </div>
+        </div>
+        <div className='font-wrapper__font-section__wrapper__card-wrapper__input-wrapper'>
+
+              <input
+                id={props.squareData.id}
+                name="font"
+                value={props.squareData.id}
+                onChange={ ()=>handlerInputSelection(props.squareData.id)}
+                type="radio"
+                onFocus={()=>handlerOnFocus(props.squareData[colorBlindLabel])}
+              />
+              <label htmlFor={props.squareData.id}>{props.squareData.label}</label>
+
+
         </div>
       </div>
-      <div className='font-wrapper__font-section__input-wrapper__input'>
-        <input
-          id={props.squareData.id}
-          name="font"
-          value={props.squareData.id}
-          onChange={ ()=>handlerInputSelection(props.squareData.id)}
-          type="radio"
-        />
-        <label htmlFor={props.squareData.id}>{props.squareData.label}</label>
-      </div>
+      <p className='font-wrapper__font-section__wrapper__color-reader'>
+          {props.squareData[colorBlindLabel]}
+      </p>
     </div>
   )
 }

@@ -61,6 +61,10 @@ table {
 	border-spacing: 0;
 }
 
+button {
+	font-family: Montserrat;
+}
+
 * {
 	box-sizing: border-box;
 }

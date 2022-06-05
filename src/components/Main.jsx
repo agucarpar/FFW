@@ -18,6 +18,10 @@ function handlerTags(tagsName) {
 
 }
 
+function handlerOnFocus(section) {
+  speechSynthesis.speak(new SpeechSynthesisUtterance(section))
+}
+
 
 useEffect(() => {
 
@@ -46,14 +50,20 @@ useEffect(() => {
         <div className='main__navbar'>
           <p className='main__navbar__sentence-title'>Please, select one font</p>
           <div className='main__navbar__tags-container'>
-            <p
+            <button
               style={{color: tagToShow === stringMyFonts ? 'orange' : 'grey' } }
-              onClick={()=>handlerTags(stringMyFonts)}>MY FONTS
-            </p>
-            <p
+              onClick={()=>handlerTags(stringMyFonts)}
+              onFocus={()=>handlerOnFocus(stringMyFonts)}
+            >
+              MY FONTS
+            </button>
+            <button
               style={{color: tagToShow === stringBuyFonts ? 'orange' : 'grey' } }
-              onClick={()=>handlerTags(stringBuyFonts)}>BUY FONTS
-            </p>
+              onClick={()=>handlerTags(stringBuyFonts)}
+              onFocus={()=>handlerOnFocus(stringBuyFonts)}
+            >
+              BUY FONTS
+            </button>
         </div>
         </div>
         <div className='main__body'>

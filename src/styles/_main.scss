@@ -1,10 +1,13 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,600;1,100&display=swap');
+
+
 .main {
   width: 65rem;
   &__navbar {
     align-items: baseline;
     display: flex;
     justify-content: space-between;
-    padding: 1rem;
+    padding: 2rem 1rem;
     &__sentence-title {
       font-size: 3rem;
       font-weight: 900;
@@ -13,9 +16,12 @@
       display: flex;
       justify-content: space-between;
       width: 12rem;
-      p {
-        font-weight: 900;
+      button {
+        border: unset;
         cursor: pointer;
+        // font-family: mon;
+        font-weight: 900;
+        background: unset;
       }
     }
   }

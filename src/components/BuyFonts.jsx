@@ -16,7 +16,6 @@ function BuyFonts() {
   const buyFonts = useSelector(state => state.fontsReducer.buyFonts)
 
 
-
   useEffect(() => {
 
     if(buyFonts.length !== 0) return
@@ -24,6 +23,9 @@ function BuyFonts() {
     getMyFonts().then(response =>{
 
       const data = response.data.content
+
+
+
 
       if(data.length >= 1) {
         dispatch(
@@ -42,7 +44,7 @@ function BuyFonts() {
   if(buyFonts.length >= 1) {
 
     return (
-      <div className="buy-font-container">
+      <form className="buy-font-container">
         {
           buyFonts.map(font => {
             return (
@@ -54,7 +56,7 @@ function BuyFonts() {
             )
           })
         }
-      </div>
+      </form>
     )
   } else {
     return (

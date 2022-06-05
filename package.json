@@ -94,6 +94,15 @@
         "double",
         {"avoidEscape": true},
         {"allowTemplateLiterals": true}
+      ],
+      "no-use-before-define": [
+        "warn",
+        {
+          "functions": true,
+          "classes": true,
+          "variables": true,
+          "allowNamedExports": false
+        }
       ]
     }
   },

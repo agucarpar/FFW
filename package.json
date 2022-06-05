@@ -103,6 +103,29 @@
           "variables": true,
           "allowNamedExports": false
         }
+      ],
+      "semi": [0, "never"],
+      "prefer-const": [
+        "error",
+        {
+          "destructuring": "any",
+          "ignoreReadBeforeAssign": false
+        }
+      ],
+      "no-case-declarations": [1],
+      "no-shadow": [
+        "error", {
+        "hoist": "functions"
+        }
+      ],
+      "camelcase": [
+        "error",
+        {
+          "properties": "always",
+          "ignoreDestructuring": true,
+          "ignoreImports": true,
+          "ignoreGlobals": false
+        }
       ]
     }
   },

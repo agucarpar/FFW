@@ -72,7 +72,22 @@
       "react-app/jest"
     ],
     "rules": {
-      "indent": ["error", 2, { "ignoredNodes": ["ConditionalExpression"] }]
+      "indent": [
+        "warn", 2,
+        {
+          "ignoredNodes": ["ConditionalExpression"] ,
+          "flatTernaryExpressions": true ,
+          "VariableDeclarator": 2 ,
+          "ImportDeclaration": 1 ,
+          "ignoreComments": true
+        }
+      ],
+      "object-curly-spacing": [
+        "warn", "always"
+      ],
+      "array-bracket-spacing": [
+        "warn", "always"
+      ]
     }
   },
   "browserslist": {

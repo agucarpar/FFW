@@ -87,6 +87,13 @@
       ],
       "array-bracket-spacing": [
         "warn", "always"
+      ],
+      "template-curly-spacing": ["warn", "always"],
+      "quotes": [
+        "warn",
+        "double",
+        {"avoidEscape": true},
+        {"allowTemplateLiterals": true}
       ]
     }
   },

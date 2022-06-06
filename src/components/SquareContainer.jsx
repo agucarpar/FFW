@@ -4,12 +4,7 @@ import {
   selectedFont
 } from '../redux/actions/actions'
 
-
-
-
-function SquareContainer(props) {
-
-
+function SquareContainer (props) {
   const dispatch = useDispatch()
 
   // Cogiendo el valor desde el state
@@ -19,30 +14,17 @@ function SquareContainer(props) {
 
   const colorBlindLabel = 'color-blind-label'
 
-
-
-  function handlerInputSelection(id) {
-
-    dispatch (selectedFont(id))
-
+  function handlerInputSelection (id) {
+    dispatch(selectedFont(id))
   }
 
-  function handlerOnFocus(color) {
+  function handlerOnFocus (color) {
     speechSynthesis.speak(new SpeechSynthesisUtterance(color))
   }
 
   useEffect(() => {
-
-
-    if(reduxSelectedFont === props.squareData.id) {setIsSelected(true)}
-    else {setIsSelected(false)}
-
-
-  },[reduxSelectedFont, props.squareData.id])
-
-
-
-
+    if (reduxSelectedFont === props.squareData.id) { setIsSelected(true) } else { setIsSelected(false) }
+  }, [reduxSelectedFont, props.squareData.id])
 
   return (
     <div className='font-wrapper__font-section__wrapper'>
@@ -60,12 +42,11 @@ function SquareContainer(props) {
             id={props.squareData.id}
             name="font"
             value={props.squareData.id}
-            onChange={ ()=>handlerInputSelection(props.squareData.id)}
+            onChange={ () => handlerInputSelection(props.squareData.id)}
             type="radio"
-            onFocus={()=>handlerOnFocus(props.squareData[colorBlindLabel])}
+            onFocus={() => handlerOnFocus(props.squareData[colorBlindLabel])}
           />
           <label htmlFor={props.squareData.id}>{props.squareData.label}</label>
-
 
         </div>
       </div>

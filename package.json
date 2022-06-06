@@ -69,83 +69,7 @@
     "extends": [
       "react-app",
       "react-app/jest"
-    ],
-    "rules": {
-      "indent": [
-        "warn",
-        2,
-        {
-          "ignoredNodes": [
-            "ConditionalExpression"
-          ],
-          "flatTernaryExpressions": true,
-          "VariableDeclarator": 2,
-          "ImportDeclaration": 1,
-          "ignoreComments": true
-        }
-      ],
-      "object-curly-spacing": [
-        "warn",
-        "always"
-      ],
-      "array-bracket-spacing": [
-        "warn",
-        "always"
-      ],
-      "template-curly-spacing": [
-        "warn",
-        "always"
-      ],
-      "quotes": [
-        "warn",
-        "double",
-        {
-          "avoidEscape": true
-        },
-        {
-          "allowTemplateLiterals": true
-        }
-      ],
-      "no-use-before-define": [
-        "warn",
-        {
-          "functions": true,
-          "classes": true,
-          "variables": true,
-          "allowNamedExports": false
-        }
-      ],
-      "semi": [
-        0,
-        "never"
-      ],
-      "prefer-const": [
-        "error",
-        {
-          "destructuring": "any",
-          "ignoreReadBeforeAssign": false
-        }
-      ],
-      "no-case-declarations": [
-        1
-      ],
-      "no-shadow": [
-        "error",
-        {
-          "hoist": "functions"
-        }
-      ],
-      "camelcase": [
-        "error",
-        {
-          "properties": "always",
-          "ignoreDestructuring": true,
-          "ignoreImports": true,
-          "ignoreGlobals": false
-        }
-      ],
-      "no-lonely-if": "error"
-    }
+    ]
   },
   "browserslist": {
     "production": [
@@ -214,6 +138,13 @@
     ]
   },
   "devDependencies": {
-    "eslint": "^8.17.0"
+    "eslint": "^8.17.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-config-standard": "^17.0.0",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-n": "^15.2.1",
+    "eslint-plugin-promise": "^6.0.0",
+    "eslint-plugin-react": "^7.30.0",
+    "prettier": "^2.6.2"
   }
 }
